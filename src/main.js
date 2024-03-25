@@ -2,7 +2,9 @@ let USERS_TO_FIND = 10
 const API_URL = `https://randomuser.me/api/?results=${USERS_TO_FIND}`
 
 
-const [userGrid, title,cardTemplate] = selectDomElements("#userGrid",".text-center","#cardTemplate"); 
+const [userGrid, title,cardTemplate,reRollBtn,newUserBtn] = selectDomElements("#userGrid",".text-center","#cardTemplate","#reRollBtn,newUserBtn"); 
+
+reRollBtn.addEventListener("click", () => usersApp.getUsers(API_URL) )
 
 const usersApp = ( () => {
     async function privateGetUsers(privateUrl){
